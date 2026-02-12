@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate - Eklavya Seva Foundation</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Support Our Mission</h1>
+</header>
+
+<nav>
+    <a href="../index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="donate.html">Donate</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<section class="container">
+    <h2>Support Our Mission</h2>
+
+    <p>Your donation helps us run education and health programs in rural Uttar Pradesh.</p>
+
+    <h3>Online Donation</h3>
+    <button id="rzp-button">Donate Now</button>
+
+    <h3>Bank Transfer</h3>
+    <p><strong>Account Name:</strong> Eklavya Seva Foundation</p>
+    <p><strong>Bank Name:</strong> __________</p>
+    <p><strong>Account Number:</strong> __________</p>
+    <p><strong>IFSC Code:</strong> __________</p>
+
+    <p><strong>UPI ID:</strong> yourupi@bank</p>
+</section>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+var options = {
+    "key": "YOUR_RAZORPAY_KEY_ID",
+    "amount": "10000", 
+    "currency": "INR",
+    "name": "Eklavya Seva Foundation",
+    "description": "Donation",
+    "image": "../img/logo.svg",
+    "handler": function (response){
+        alert("Thank you for your donation!");
+    },
+    "theme": {
+        "color": "#0d6efd"
+    }
+};
+
+var rzp = new Razorpay(options);
+document.getElementById('rzp-button').onclick = function(e){
+    rzp.open();
+    e.preventDefault();
+}
+</script>
+<footer>
+    © 2026 Eklavya Seva Foundation
+</footer>
+
+</body>
+</html>
