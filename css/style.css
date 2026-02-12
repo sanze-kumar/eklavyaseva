@@ -3,13 +3,21 @@ body {
     font-family: Arial, sans-serif;
     background: #f4f6f9;
     line-height: 1.6;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 header {
     background: #0d6efd;
     color: white;
     text-align: center;
-    padding: 40px 20px;
+    padding: 10px 20px;
 }
 
 nav {
@@ -36,8 +44,13 @@ nav a:hover {
 }
 
 .logo {
-    width: 60px;
+    width: 280px;
 }
+
+header .logo {
+    width: 280px;
+}
+
 
 footer {
     background: #111;
@@ -59,3 +72,21 @@ button {
 button:hover {
     background: #084298;
 }
+
+<style>
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+</style>
